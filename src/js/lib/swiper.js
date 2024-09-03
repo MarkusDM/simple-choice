@@ -153,9 +153,10 @@ function initSliders() {
         const carousel = new Swiper('.lookbook__swiper ', {
             modules: [Navigation, Pagination, Controller, Autoplay],
             ...swiperDefaults,
+            speed: 2000,
             virtualTranslate: true,
             autoplay: {
-                delay: 4000,
+                delay: 6000,
                 disableOnInteraction: false,
                 waitForTransition: false
             },
@@ -185,6 +186,7 @@ function initSliders() {
             modules: [Controller],
 
             ...swiperDefaults,
+            speed: 2000,
             virtualTranslate: true,
             allowTouchMove: false,
             on: {

@@ -199,3 +199,22 @@ $(document).ready(function() {
         $(window).on('scroll', checkScroll);
     }
 });
+
+
+$(document).ready(function() {
+    // Добавляем обработчик события клика для кнопок табов
+    $('.shipping-group-checkout__input--item').on('click', function() {
+        // Убираем активный класс со всех кнопок
+        $('.shipping-group-checkout__input--item').removeClass('active');
+        // Добавляем активный класс нажатой кнопке
+        $(this).addClass('active');
+
+        // Получаем значение data-target для определения нужного блока контента
+        var target = $(this).data('target');
+
+        // Скрываем все блоки контента
+        $('.group-checkout__fields-wrap').removeClass('active');
+        // Показываем нужный блок контента
+        $('#' + target).addClass('active');
+    });
+});

@@ -120,7 +120,7 @@
                     <span class="group-checkout__subtitle h h_h3">Доставка</span>
                     <div class="group-checkout__shipping-list">
                         <div class="group-checkout__shipping shipping-group-checkout">
-                            <input checked="" type="radio" name="checkoutShippingOption" class="shipping-group-checkout__input">
+                            <input checked="" type="radio" name="checkoutShippingOption" class="shipping-group-checkout__input shipping-group-checkout__input--item active" data-target="tab1">
                             <div class="shipping-group-checkout__content">
                                 <span class="shipping-group-checkout__title txt20 txt20_lora">Курьером</span>
                                 <ul class="shipping-group-checkout__list">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="group-checkout__shipping shipping-group-checkout">
-                            <input type="radio" name="checkoutShippingOption" class="shipping-group-checkout__input">
+                            <input type="radio" name="checkoutShippingOption" class="shipping-group-checkout__input shipping-group-checkout__input--item" data-target="tab2">
                             <div class="shipping-group-checkout__content">
                                 <span class="shipping-group-checkout__title txt20 txt20_lora">Транспортной компанией</span>
                                 <ul class="shipping-group-checkout__list">
@@ -148,7 +148,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="group-checkout__fields-wrap">
+                    
+                    <div class="group-checkout__fields-wrap active" id="tab1">
+                        <span class="group-checkout__fields-subtitle">Способ доставки:</span>
+                        <div class="group-checkout__dropdown group-checkout__dropdown--one dropdown">
+                            <select data-sel-hint="доставка не выбрана " data-sel-label="Выберите способ доставки" data-show-selection="">
+                                <option value="1">Курьер CDEK</option>
+                                <option value="2">Курьер Dalli </option>
+                                <option value="3">Курьер по регионам Dalli</option>
+                                
+                            </select>
+                        </div>
                         <span class="group-checkout__fields-subtitle">Ваш адрес:</span>
                         <div class="group-checkout__fields">
                             <div class="group-checkout__dropdown dropdown">
@@ -176,6 +186,17 @@
                             <div data-hint="Заполните поле" class="group-checkout__input group-checkout__input_large input">
                                 <input data-validate="" data-required="" autocomplete="off" type="text" name="form[]" placeholder="Комментарий для курьера" class="input__field">
                             </div>
+                        </div>
+                    </div>
+                    <div class="group-checkout__fields-wrap" id="tab2">
+                        <span class="group-checkout__fields-subtitle">Выберете пункт ПВЗ:</span>
+                        <div class="group-checkout__dropdown group-checkout__dropdown--one dropdown">
+                            <select data-sel-hint="Пункт не выбран " data-sel-label="Пункт ПВЗ" data-show-selection="">
+                                <option value="1">5post</option>
+                                <option value="2">5post </option>
+                                <option value="3">5post</option>
+                                
+                            </select>
                         </div>
                     </div>
                 </div>

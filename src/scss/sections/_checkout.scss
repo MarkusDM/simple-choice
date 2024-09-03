@@ -80,6 +80,13 @@
 
     background-color: $white;
 
+
+    .select__option {
+        &::after {
+            display: none;
+        }
+    }
+
     @media (max-width: 48em) {
         padding: 3.2rem;
 
@@ -92,6 +99,10 @@
         @media (max-width: 48em) {
             margin-bottom: 3.2rem;
         }
+    }
+
+    &__fields-wrap {
+
     }
 
     &__fields {
@@ -119,6 +130,10 @@
             grid-template-columns: repeat(3, 34.7rem);
             gap: 2rem;
         }
+    }
+
+    &__dropdown--one {
+        margin-bottom: 6rem;
     }
 
     &__fields-subtitle {
@@ -163,8 +178,13 @@
     }
 
     &__fields-wrap {
-        display: flex;
+        display: none;
         flex-direction: column;
+    }
+
+
+    &__fields-wrap.active {
+        display: flex;
     }
 
     &__options {

@@ -76,13 +76,13 @@ class Accordion {
                 (item) => item.closest(`[${this.attrs.ACCORDION}]`) === accordionGroup
             );
             titles.forEach((title) => {
-                if (hideBody) {
+                // Всегда скрываем контент аккордеона при инициализации
+                title.setAttribute('tabindex', '-1');
+                title.nextElementSibling.hidden = true; // Скроем все элементы содержимого
+
+                if (!hideBody) {
+                    // Отображаем контент аккордеона, если это требуется
                     title.removeAttribute('tabindex');
-                    if (!title.classList.contains(this.classes.ACTIVE)) {
-                        title.nextElementSibling.hidden = true;
-                    }
-                } else {
-                    title.setAttribute('tabindex', '-1');
                     title.nextElementSibling.hidden = false;
                 }
             });
@@ -104,6 +104,7 @@ class Accordion {
         });
     }
 }
+
 
 // --------------------------------------------------------------------------
 
